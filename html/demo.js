@@ -36,8 +36,8 @@ function startConnect() {
 // Called when the client connects
 function onConnect() {
     // Fetch the MQTT topic from the form
-    topic = document.getElementById("topic").value;
-
+    //topic = document.getElementById("topic").value;
+    topic = "mqttonweb";
     // Print output for the user in the messages div
     document.getElementById("messages").innerHTML += '<span>Subscribing to: ' + topic + '</span><br/>';
 
