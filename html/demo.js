@@ -75,8 +75,11 @@ function updateScroll() {
 
 function publish(){
 	//read data from form
-	pubMsg = document.getElementById("pubMsg").value;
-	pubTopic = document.getElementById("pubTopic").value;
+    let str1 = document.getElementById("para").value;
+    let str2 = document.getElementById("newVal").value;
+    let res = str1.concat(str2);
+	pubMsg = res;
+	pubTopic = document.getElementById("fish").value;
 	
 	//publish message
 	message = new Paho.MQTT.Message(pubMsg);
