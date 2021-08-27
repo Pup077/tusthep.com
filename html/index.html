@@ -10,25 +10,34 @@
    </head>
    <body>
       <div class="wrapper">
-         <h1>mqtt-demo</h1>
+         <h1>Remote Setting : การตั้งค่า sensor จากเว็บ</h1>
+         <h2>บ่อจระเข้</h2>
          <form id="connection-information-form">
-            <b>Hostname or IP Address:</b> 
-            <input id="host" type="text" name="host" value="34.67.161.xxx"><br>
-            <b>Port:</b>
-            <input id="port" type="text" name="port" value="9001"><br>
-			<b>Username:</b>
-            <input id="usr" type="text" name="usr" value="xxx"><br>
-			<b>Password:</b>
-            <input id="pwd" type="password" name="pwd" value="xxx"><br>
-            <b>Topic:</b>
-            <input id="topic" type="text" name="topic" value="MQTTBox"><br><br>
-            <input type="button" onclick="startConnect()" value="Connect">
-            <input type="button" onclick="startDisconnect()" value="Disconnect"><br><br>
-			<b>Publish Topic:</b> 
-            <input id="pubTopic" type="text" name="pubTopic" value="pubWeb"><br>
-            <b>Publish Message:</b>
-            <input id="pubMsg" type="text" name="pubMsg" value="Hello from Web"><br>
-			<input type="button" onclick="publish()" value="Publish">
+            <input type="button" onclick="startConnect()" value="เชื่อมต่อ">
+            <input type="button" onclick="startDisconnect()" value="ตัดการเชื่อมต่อ"><br><br>
+            
+            <!--<b>Hostname or IP Address:</b>--> 
+            <input id="host" type="hidden" name="host" value="35.202.162.54"><br>
+            <!--<b>Port:</b>-->
+            <input id="port" type="hidden" name="port" value="9001"><br>
+			<!--<b>Username:</b>-->
+            <input id="usr" type="hidden" name="usr" value="pup01"><br>
+			   <!--<b>Password:</b>--> 
+            <input id="pwd" type="hidden" name="pwd" value="Gta1234565"><br>
+            <b>ID อุปกรณ์</b>
+            <select name="fish" id="fish">
+               <option value="F1">บ่อจระเข้ 1</option>
+               <option value="F2">บ่อจระเข้ 2</option>
+            </select><br>
+            <b>ค่าที่ต้องการตั้ง</b>
+            <select name="para" id="para">
+               <option value="Weight">น้ำหนัก</option>
+               <option value="F2">จำนวนครั้ง/วัน</option>
+            </select><br><br>
+            <b>ค่าใหม่ :</b>
+            <input id="topic" type="text" name="topic"><br><br>
+         
+			<input type="button" onclick="publish()" value="บันทึกค่าไปอุปกรณ์">
          </form>
          <div id="messages"></div>
       </div>
