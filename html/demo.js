@@ -87,4 +87,21 @@ function publish(){
 	var showPub = '<span>Publish| Topic: ' + pubTopic + ' Message: ' + pubMsg + '</span><br/>';
 	document.getElementById("messages").innerHTML += showPub;
     updateScroll(); // Scroll to bottom of window
+
+    function publish2(){
+        //read data from form
+        pubMsg = document.getElementById("pubMsg2").value;
+        pubTopic = document.getElementById("pubTopic2").value;
+        
+        //publish message
+        message = new Paho.MQTT.Message(pubMsg);
+        message.destinationName = pubTopic;
+        client.send(message);
+        
+        //update textarea
+        var showPub = '<span>Publish2| Topic: ' + pubTopic + ' Message: ' + pubMsg + '</span><br/>';
+        document.getElementById("messages").innerHTML += showPub;
+        updateScroll(); // Scroll to bottom of window
+    }
+    
 }
